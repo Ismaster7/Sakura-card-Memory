@@ -10,7 +10,7 @@ let openCards = [
 ]
 
 let shuffleCards = cards.sort(() =>{
-    Math.random() > 0.5 ? 2 : -1;
+   return Math.random() > 0.5 ? 2 : -1;
 })
 
 function sortear(){
@@ -19,10 +19,10 @@ function sortear(){
         box.className = "item";
         box.innerHTML = shuffleCards[i];
       // let imagem = document.createElement("img")
-       //imagem.src = `url(../image/cartas/1.jpg)`
+       //imagem.src = `url(.image/cartas/1.jpg)`
        //${shuffleCards[i]}
        //imagem.style.backgroundSize = "cover";
-     box.style.backgroundImage = `url('../image/cartas/${i}.jpg')`;
+     box.style.backgroundImage = 'url(./image/cartas/' + 1 + '.jpg)';
         document.querySelector(".game").appendChild(box)
      //   box.appendChild(imagem)
     }
