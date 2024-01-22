@@ -1,4 +1,10 @@
 
+function playSound(){
+    const audiosound = new Audio("./assets/audio/musicatema.mpeg");
+    audiosound.play();
+
+}
+
 const cards = [
     {
         numero: 1,
@@ -130,6 +136,7 @@ function trazerCarta(numeroCarta){
 }
 
 function main(){
+playSound();
 sortear()
 }
 
