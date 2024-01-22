@@ -5,7 +5,15 @@ body{
     min-height: 100vh;
     background-color: #f78da7;
     color: white;
+    user-select: none;
+    cursor: url("../image/sym825.ani"), default ;
 }
+
+body:hover{
+ cursor: url(https://cur.cursors-4u.net/cursors/cur-3/cur221.ani), url(https://cur.cursors-4u.net/cursors/cur-3/cur221.png), default !important;
+}
+
+
 
 .container{
     position: relative;
@@ -15,10 +23,11 @@ body{
     align-items: center;
     gap: 1rem;
     background-color:#cf2e2e ;
-    padding: 1rem 0.5rem;
+    padding: 1rem auto;
     border-radius: 0.3rem;
     box-shadow: 2px 2px 5px black;
-
+    width: auto;
+    max-width: 93%;
 }
 
 
@@ -28,7 +37,7 @@ h2{
     text-transform: uppercase;
     letter-spacing: 0.1em;
     text-shadow: 4px 4px 5px  black;
-    
+    text-align: center;
 }
 
 .reset{
@@ -39,6 +48,7 @@ h2{
     box-shadow: 3px 3px 5px black;
     padding: 1em 2em;
     letter-spacing: 0.1em;
+    margin-bottom: 1rem;
     cursor: pointer;
 }
 
@@ -52,23 +62,53 @@ h2{
     background-color: #cf2e2e;
 }
 
-.game{
-    height: 30rem;
-    width: 70rem;
-    border: #f78da7 solid 1px;
+#game{
+    max-width: 93%;
+    max-height: 80%;
+    width: auto;
+
     flex-wrap: wrap;
     display: flex;
     gap: 0.8rem;
     transform-style: preserve-3d;
     perspective: 500px;
+    transform: rotateY(180deg);
+    transition: 0.25s;
 }
 
 
 .item{
     position: relative;
     width: 7rem;
-    height: 14rem;
+    height: 14.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-size: cover;
+    border-radius: 0.5rem;
+    box-shadow: 2px 2px 2px black;
+    color: transparent;
+    transition: 0.35s;
+    transform: rotateY(180deg);
+}
+
+.item::after{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url(../image/cartas/virada2.jpg);
+    background-size: cover;
+    transition: 0.35s;
+    transform: rotateY(0deg);
+    backface-visibility: hidden;
+}
+
+
+.item.boxOpen {
+    transform: rotateY(0deg);
+}
+
+.boxOpen::after,
+.boxMatch::after{
+    transform: rotateY(180deg);
 }
